@@ -1,62 +1,196 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Cell Game Guide | Início</title>
+    <title>Supercell Universe - Fan Site</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-slate-900 text-slate-200">
 
-    <header>
-        <div class="container">
-            <div class="logo">Super Cell Game Guide</div>
-            <nav>
-                <a href="#">Sobre</a>
-                <a href="#">Contato</a>
-            </nav>
+    <header class="bg-slate-800/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" onclick="showPage('home')" class="text-2xl font-supercell text-white">
+                SUPERCELL
+            </a>
+            <div class="hidden md:flex space-x-4 items-center">
+                <a href="#" onclick="showPage('home')" class="nav-link text-slate-300">Início</a>
+                <a href="#" onclick="showPage('supercell')" class="nav-link text-slate-300">Sobre</a>
+                <a href="#" onclick="showPage('clash-royale')" class="nav-link text-slate-300">Clash Royale</a>
+                <a href="#" onclick="showPage('clash-of-clans')" class="nav-link text-slate-300">Clash of Clans</a>
+                <a href="#" onclick="showPage('brawl-stars')" class="nav-link text-slate-300">Brawl Stars</a>
+                <a href="#" onclick="showPage('squad-busters')" class="nav-link text-slate-300">Squad Busters</a>
+                <a href="#" onclick="showPage('mo-co')" class="nav-link text-slate-300">Mo.co</a>
+                <a href="#" onclick="showPage('boom-beach')" class="nav-link text-slate-300">Boom Beach</a>
+                <a href="#" onclick="showPage('hay-day')" class="nav-link text-slate-300">Hay Day</a>
+                <button id="theme-toggle" class="text-slate-300 hover:text-blue-500 transition-colors">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800">
+            <a href="#" onclick="showPage('home'); toggleMobileMenu();" class="block py-2 px-6 text-slate-300 hover:bg-slate-700">Início</a>
+            <a href="#" onclick="showPage('supercell'); toggleMobileMenu();" class="block py-2 px-6 text-slate-300 hover:bg-slate-700">Sobre a Supercell</a>
+            <a href="#" onclick="showPage('clash-royale'); toggleMobileMenu();" class="block py-2 px-6 text-slate-300 hover:bg-slate-700">Clash Royale</a>
+            <a href="#" onclick="showPage('clash-of-clans'); toggleMobileMenu();" class="block py-2 px-6 text-slate-300 hover:bg-slate-700">Clash of Clans</a>
+            <a href="#" onclick="showPage('brawl-stars'); toggleMobileMenu();" class="block py-2 px-6 text-slate-300 hover:bg-slate-700">Brawl Stars</a>
+            <a href="#" onclick="showPage('squad-busters'); toggleMobileMenu();" class="block py-2 px-6 text-slate-300 hover:bg-slate-700">Squad Busters</a>
+            <a href="#" onclick="showPage('mo-co'); toggleMobileMenu();" class="block py-2 px-6 text-slate-300 hover:bg-slate-700">Mo.co</a>
+            <a href="#" onclick="showPage('boom-beach'); toggleMobileMenu();" class="block py-2 px-6 text-slate-300 hover:bg-slate-700">Boom Beach</a>
+            <a href="#" onclick="showPage('hay-day'); toggleMobileMenu();" class="block py-2 px-6 text-slate-300 hover:bg-slate-700">Hay Day</a>
+            <div class="px-6 py-2">
+                 <button id="theme-toggle-mobile" class="text-slate-300 hover:text-blue-500 transition-colors w-full text-left">
+                    <i class="fas fa-sun mr-2"></i> Mudar Tema
+                </button>
+            </div>
         </div>
     </header>
 
-    <main>
-        <div class="container">
-            <h1 class="main-title">Explore nossos guias</h1>
+    <main class="container mx-auto px-6 py-8">
+
+        <section id="home" class="page active">
+            <div class="text-center bg-slate-800 p-8 rounded-xl shadow-2xl">
+                <h1 class="text-5xl font-supercell text-blue-400 mb-4">Super Cell Game Guide</h1>
+                <p class="text-lg text-slate-300 max-w-3xl mx-auto mb-8">Explore os mundos fantásticos criados pela Supercell. Conheça mais sobre a empresa e seus jogos de sucesso que conquistaram milhões de jogadores ao redor do mundo.</p>
+                <button onclick="showPage('supercell')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105">
+                    Conheça a História
+                </button>
+            </div>
             
-            <div class="interactive-grid">
-                <a href="#" class="grid-button">
-                    <img src="supercell_logo.png" alt="Logo da Supercell">
-                    <span>Sobre a Supercell</span>
-                </a>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+                <div class="game-card bg-slate-800 rounded-lg overflow-hidden" onclick="showPage('clash-royale')">
+                    <img src="WhatsApp Image 2025-10-07 at 10.34.14.jpeg" alt="Imagem do Clash Royale" class="w-full h-48 object-contain p-4">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-blue-400">Clash Royale</h3>
+                        <p class="mt-2 text-slate-400">Batalhas épicas em tempo real.</p>
+                    </div>
+                </div>
+                <div class="game-card bg-slate-800 rounded-lg overflow-hidden" onclick="showPage('clash-of-clans')">
+                    <img src="WhatsApp Image 2025-10-07 at 10.34.16.jpeg" alt="Imagem do Clash of Clans" class="w-full h-48 object-contain p-4">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-green-400">Clash of Clans</h3>
+                        <p class="mt-2 text-slate-400">Construa sua vila e lidere seu clã.</p>
+                    </div>
+                </div>
+                <div class="game-card bg-slate-800 rounded-lg overflow-hidden" onclick="showPage('brawl-stars')">
+                    <img src="WhatsApp Image 2025-10-07 at 08.53.29.jpeg" alt="Imagem do Brawl Stars" class="w-full h-48 object-contain p-4">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-yellow-400">Brawl Stars</h3>
+                        <p class="mt-2 text-slate-400">Batalhas 3v3 e Battle Royale.</p>
+                    </div>
+                </div>
+                <div class="game-card bg-slate-800 rounded-lg overflow-hidden" onclick="showPage('squad-busters')">
+                    <img src="WhatsApp Image 2025-10-09 at 10.05.47.jpeg" alt="Imagem do Squad Busters" class="w-full h-48 object-contain p-4">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-cyan-400">Squad Busters</h3>
+                        <p class="mt-2 text-slate-400">Forme seu esquadrão e vença!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 flex justify-center">
+                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full lg:w-auto">
+                    <div class="game-card bg-slate-800 rounded-lg overflow-hidden" onclick="showPage('mo-co')">
+                        <img src="WhatsApp Image 2025-10-09 at 10.08.05.jpeg" alt="Imagem do mo.co" class="w-full h-48 object-contain p-4">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-pink-400">mo.co</h3>
+                            <p class="mt-2 text-slate-400">Cace monstros em um mundo estiloso.</p>
+                        </div>
+                    </div>
+                    <div class="game-card bg-slate-800 rounded-lg overflow-hidden" onclick="showPage('hay-day')">
+                        <img src="WhatsApp Image 2025-10-09 at 10.04.12.jpeg" alt="Imagem do Hay Day" class="w-full h-48 object-contain p-4">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-lime-400">Hay Day</h3>
+                            <p class="mt-2 text-slate-400">Construa a fazenda dos seus sonhos.</p>
+                        </div>
+                    </div>
+                    <div class="game-card bg-slate-800 rounded-lg overflow-hidden" onclick="showPage('boom-beach')">
+                        <img src="WhatsApp Image 2025-10-09 at 10.15.01.jpeg" alt="Imagem do Boom Beach" class="w-full h-48 object-contain p-4">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-orange-400">Boom Beach</h3>
+                            <p class="mt-2 text-slate-400">Lute pela dominação da praia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="mt-12 text-center">
+                <audio controls class="mx-auto rounded-lg">
+                    <source src="https://placehold.co/audio.mp3" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+                <p class="text-sm text-slate-500 mt-2">Música tema (placeholder)</p>
+            </div>
+        </section>
 
-                <a href="#" class="grid-button">
-                    <img src="clash_of_clans_logo.png" alt="Logo do Clash of Clans">
-                    <span>Guia de Clash of Clans</span>
-                </a>
+        <section id="supercell" class="page">
+            <h2 class="text-4xl font-supercell text-center mb-8 text-blue-400">Sobre a Supercell</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-slate-800 p-8 rounded-lg">
+                <div>
+                    <p class="mb-4 text-slate-300">A Supercell é uma desenvolvedora de jogos para dispositivos móveis sediada em Helsinque, na Finlândia. Fundada em 2010, a empresa é conhecida por criar jogos que são jogados por dezenas de milhões de pessoas todos os dias.</p>
+                    <p class="mb-4 text-slate-300">Embora nosso foco aqui seja em Clash Royale, Clash of Clans e Brawl Stars, o portfólio da Supercell inclui outros grandes sucessos como <strong class="text-green-400">Hay Day</strong>, <strong class="text-blue-400">Boom Beach</strong> e o mais recente <strong class="text-pink-400">mo.co</strong>, mostrando sua versatilidade em criar experiências de jogo amadas mundialmente.</p>
+                    <p class="text-slate-300">A filosofia da Supercell é simples: "Os melhores times fazem os melhores jogos". Eles acreditam em pequenas equipes independentes (células) que têm a liberdade de perseguir suas visões, resultando em jogos de alta qualidade e com grande apelo global.</p>
+                </div>
+                <img src="WhatsApp Image 2025-10-07 at 10.34.15.jpeg" alt="Logo da Supercell" class="rounded-lg shadow-lg w-full">
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 mt-8">
+                <img src="https://placehold.co/400x300/1e293b/ffffff?text=Time+de+Desenvolvimento" alt="Time de Desenvolvimento" class="rounded-lg">
+                <img src="https://placehold.co/400x300/1e293b/ffffff?text=Outros+Jogos" alt="Outros Jogos da Supercell" class="rounded-lg">
+                <img src="https://placehold.co/400x300/1e293b/ffffff?text=Evento+Mundial" alt="Evento Mundial" class="rounded-lg">
+            </div>
+        </section>
 
-                <a href="#" class="grid-button">
-                    <img src="brawl_stars_logo.png" alt="Logo do Brawl Stars">
-                    <span>Guia de Brawl Stars</span>
-                </a>
+        <section id="clash-royale" class="page">
+             <h2 class="text-4xl font-supercell text-center mb-8 text-blue-400">Clash Royale</h2>
+            
+            <div class="bg-slate-800 p-8 rounded-lg mb-8">
+                <h3 class="text-2xl font-bold mb-4 text-slate-100">O que é Clash Royale?</h3>
+                <p class="text-slate-300 mb-4">Clash Royale é um jogo de estratégia em tempo real que combina elementos de jogos de cartas colecionáveis, tower defense e arena de batalha multiplayer. O objetivo é simples: destruir mais torres que o seu adversário em batalhas rápidas e frenéticas. Se destruir a Torre do Rei inimiga, você ganha a partida instantaneamente!</p>
+                
+                <h3 class="text-2xl font-bold mt-6 mb-4 text-slate-100">Como se joga?</h3>
+                <p class="text-slate-300 mb-2"><strong class="text-blue-400">Monte seu Deck:</strong> Antes de batalhar, você monta um "deck" com 8 cartas. Cada carta representa uma tropa, um feitiço ou uma construção com habilidades únicas.</p>
+                <p class="text-slate-300 mb-2"><strong class="text-blue-400">Gerencie seu Elixir:</strong> Durante a batalha, você usa "elixir" para jogar suas cartas. O elixir recarrega com o tempo, então usá-lo com sabedoria para atacar e defender é a chave para a vitória.</p>
 
-                <a href="#" class="grid-button">
-                    <img src="clash_royale_logo.png" alt="Logo do Clash Royale">
-                    <span>Guia de Clash Royale</span>
-                </a>
+                <h3 class="text-2xl font-bold mt-6 mb-4 text-slate-100">Progressão: Troféus e Níveis</h3>
+                <p class="text-slate-300 mb-2"><strong class="text-green-400">Caminho de Troféus:</strong> Ao vencer batalhas, você ganha troféus. Ao perder, você os perde. Acumular troféus faz você subir por diferentes Arenas e Ligas, desbloqueando novas cartas e recompensas pelo caminho.</p>
+                <p class="text-slate-300"><strong class="text-yellow-400">Nível do Rei:</strong> Para deixar suas torres mais fortes, você precisa aumentar o seu "Nível do Rei". Isso é feito ganhando Pontos de Experiência (XP), que são obtidos ao doar e evoluir o nível das suas próprias cartas.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <img src="https://clashroyale.com/uploaded-images-blog/CR_Blog_DevBlog_PathofLegends_1920x1080.jpg?mtime=20221025134701" alt="Arena de Clash Royale" class="gallery-image rounded-lg w-full h-full object-cover">
+                <img src="https://clashroyale.com/uploaded-images-blog/Clash-Royale-Blog-Anniversary-Evolution-1920x1080.jpg?mtime=20240124095400" alt="Cartas de Clash Royale" class="gallery-image rounded-lg w-full h-full object-cover">
+                <img src="https://supercell.com/images/9a515a42099f66a877969b76d758f278/clash-royale-fan-kit.7d1a2245.jpg" alt="Personagens de Clash Royale" class="gallery-image rounded-lg w-full h-full object-cover">
+                <img src="https://clashroyale.com/uploaded-images/arena_11_2.jpg" alt="Arena Lendária" class="gallery-image rounded-lg w-full h-full object-cover">
+            </div>
+            
+            </section>
+
+        </main>
+    
+    <footer class="bg-slate-800 border-t border-slate-700 mt-12">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2025 Supercell Universe Fan Site. Todos os direitos reservados.</p>
+            <p class="text-sm mt-2">Este é um site de fã não oficial e não é afiliado à Supercell.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="#" class="hover:text-blue-500"><i class="fab fa-youtube text-2xl"></i></a>
+                <a href="#" class="hover:text-blue-500"><i class="fab fa-twitter text-2xl"></i></a>
+                <a href="#" class="hover:text-blue-500"><i class="fab fa-instagram text-2xl"></i></a>
             </div>
         </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Super Cell Game Guide. Conteúdo não oficial.</p>
-        </div>
     </footer>
-
-    <script src="script.js" defer></script>
+    
+    <button id="back-to-top" class="fixed bottom-5 right-5 bg-blue-500 text-white w-12 h-12 rounded-full hidden justify-center items-center shadow-lg hover:bg-blue-600 transition-all opacity-0 transform translate-y-2">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script src="script.js"></script>
 </body>
 </html>
